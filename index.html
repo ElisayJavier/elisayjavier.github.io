@@ -89,7 +89,7 @@
       );
     }
 
-    nav, header, section, footer, .final-photo{ position:relative; z-index:1; }
+    nav, header, section, footer, .final-photos{ position:relative; z-index:1; }
 
     /* ===== NAV ===== */
     nav{
@@ -160,7 +160,6 @@
       margin:22px auto;
     }
 
-    /* ===== FECHA SENCILLA ===== */
     .hero-date{
       font-size:clamp(14px, 2.4vw, 18px);
       letter-spacing:.14em;
@@ -180,16 +179,13 @@
       position:relative; top:-1px;
     }
 
-    /* ===== COUNTDOWN SENCILLO ===== */
     .countdown{
       margin:28px auto 0;
       display:flex; align-items:center; justify-content:center;
       gap:32px;
       width:min(480px, 92vw);
     }
-    .cd-item{
-      text-align:center;
-    }
+    .cd-item{ text-align:center; }
     .cd-num{
       font-family:'Cormorant Garamond', serif; font-weight:300;
       font-size:clamp(32px, 6vw, 48px); line-height:1;
@@ -212,9 +208,7 @@
     }
     @media (min-width:768px){ .section{ padding:96px 32px; scroll-margin-top:96px; } }
 
-    .section-heading{
-      text-align:center; margin-bottom:48px;
-    }
+    .section-heading{ text-align:center; margin-bottom:48px; }
     .section-heading h3{
       font-family:'Cormorant Garamond', serif;
       font-size:clamp(28px, 4.5vw, 44px);
@@ -327,30 +321,14 @@
     }
     .divider-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
 
-    /* ===== FOTO FINAL ===== */
-    .final-photo{
-      width:100%; max-width:1060px; margin:0 auto;
-      padding:0 20px 80px;
-    }
-    @media(min-width:768px){ .final-photo{ padding:0 32px 96px; } }
-    .final-photo-inner{
-      width:100%; height:clamp(260px, 40vw, 520px);
-      border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
-    }
-    .final-photo-inner img{ width:100%; height:100%; object-fit:cover; display:block; }
-
     /* ===== ASISTENCIA ===== */
-    .asistencia-inner{
-      text-align:center; max-width:480px; margin:auto;
-    }
+    .asistencia-inner{ text-align:center; max-width:480px; margin:auto; }
     .asistencia-inner p{
       font-size:15.5px; line-height:1.7; color:var(--muted); margin-bottom:28px;
     }
 
     /* ===== REGALO ===== */
-    .regalo-inner{
-      text-align:center; max-width:560px; margin:auto;
-    }
+    .regalo-inner{ text-align:center; max-width:560px; margin:auto; }
     .regalo-inner p{
       font-size:15.5px; line-height:1.7; color:var(--muted); margin-bottom:10px;
     }
@@ -363,6 +341,31 @@
       font-family:'Cormorant Garamond', serif;
       font-size:clamp(18px,3.5vw,26px); letter-spacing:.05em;
       color:var(--ink); display:block; margin-bottom:16px;
+    }
+
+    /* ===== FOTOS FINALES (cuadrícula 4) ===== */
+    .final-photos{
+      width:100%; max-width:1060px; margin:0 auto;
+      padding:0 20px 80px;
+    }
+    @media(min-width:768px){ .final-photos{ padding:0 32px 96px; } }
+
+    .final-photos-grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:12px;
+    }
+    @media(min-width:640px){
+      .final-photos-grid{ grid-template-columns: repeat(4, 1fr); gap:16px; }
+    }
+
+    .final-photos-grid .fp-item{
+      border-radius:var(--radius); overflow:hidden;
+      box-shadow:var(--shadow);
+      aspect-ratio: 3 / 4;
+    }
+    .final-photos-grid .fp-item img{
+      width:100%; height:100%; object-fit:cover; display:block;
     }
 
     /* ===== FOOTER ===== */
@@ -473,7 +476,7 @@
       </div>
 
       <div class="event-photo">
-        <img src="img_foto5.jpg" alt="Elisa y Javier" loading="lazy">
+        <img src="img_foto2.jpg" alt="Elisa y Javier" loading="lazy">
       </div>
     </div>
   </section>
@@ -549,10 +552,21 @@
     </div>
   </section>
 
-  <!-- FOTO FINAL -->
-  <div class="final-photo reveal">
-    <div class="final-photo-inner">
-      <img src="img_foto4.jpg" alt="Elisa y Javier" loading="lazy">
+  <!-- FOTOS FINALES: foto4, foto5, foto11, foto2 -->
+  <div class="final-photos reveal">
+    <div class="final-photos-grid">
+      <div class="fp-item">
+        <img src="img_foto4.jpg" alt="Elisa y Javier" loading="lazy">
+      </div>
+      <div class="fp-item">
+        <img src="img_foto5.jpg" alt="Elisa y Javier" loading="lazy">
+      </div>
+      <div class="fp-item">
+        <img src="img_foto11.jpg" alt="Elisa y Javier" loading="lazy">
+      </div>
+      <div class="fp-item">
+        <img src="img_foto2.jpg" alt="Elisa y Javier" loading="lazy">
+      </div>
     </div>
   </div>
 
