@@ -108,12 +108,16 @@
       .nav-links a{ font-size:12.5px; padding:8px 12px; }
     }
 
-    /* ===== HERO ===== */
+    /* ===== HERO — con img_foto2 de fondo ===== */
     header.hero{
       min-height:92vh;
       display:flex; align-items:center; justify-content:center; text-align:center;
       padding:calc(58px + 32px) 20px 48px;
-      background:linear-gradient(160deg, #1a2e3a 0%, #2c4a5a 40%, #1e3040 100%);
+      background-image:
+        linear-gradient(to bottom, var(--overlay), rgba(20,14,10,.22)),
+        url("img_foto2.jpg");
+      background-size:cover;
+      background-position:center;
       color:#fff;
     }
     @media(min-width:768px){ header.hero{ padding:calc(66px + 32px) 32px 64px; } }
@@ -123,12 +127,13 @@
       font-family:'Cormorant Garamond', serif;
       font-size:clamp(52px, 10vw, 96px); font-weight:300;
       line-height:1.04; letter-spacing:.01em;
+      text-shadow:0 2px 20px rgba(0,0,0,.3);
     }
     h1 em{ font-style:italic; }
 
     .hero-divider{
       width:48px; height:1px;
-      background:rgba(255,255,255,.4); margin:22px auto;
+      background:rgba(255,255,255,.5); margin:22px auto;
     }
 
     .hero-date{
@@ -179,7 +184,7 @@
       width:40px; height:1px; background:var(--brand); margin:14px auto 0;
     }
 
-    /* ===== EVENT GRID — sin foto, dos tarjetas en fila ===== */
+    /* ===== EVENT CARDS — dos tarjetas en fila, sin foto ===== */
     .event-cards{
       display:grid; gap:var(--gap);
       grid-template-columns:1fr;
