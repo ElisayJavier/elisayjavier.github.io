@@ -91,24 +91,62 @@
       letter-spacing:.03em; white-space:nowrap; flex-shrink:0;
     }
     .nav-logo em{ font-style:italic; color:var(--ink); }
-    .nav-links{
-      display:flex; align-items:center; gap:4px;
-      overflow-x:auto; white-space:nowrap; padding-left:16px;
-    }
-    .nav-links a{
-      color:var(--ink); text-decoration:none; font-weight:400; letter-spacing:.06em;
-      font-size:12px; text-transform:uppercase; padding:8px 10px; border-radius:2px;
-      transition:color .2s; flex-shrink:0;
-    }
-    .nav-links a:hover{ color:var(--brand-dark); }
     @media(min-width:768px){
       nav{ height:66px; padding:0 32px; }
       .nav-logo{ font-size:19px; }
-      .nav-links{ gap:6px; }
-      .nav-links a{ font-size:12.5px; padding:8px 12px; }
     }
 
-    /* ===== HERO — con img_foto2 de fondo ===== */
+    /* ===== HAMBURGER ===== */
+    .hamburger{
+      display:flex; flex-direction:column; justify-content:center;
+      gap:5px; width:36px; height:36px;
+      background:none; border:none; cursor:pointer;
+      padding:4px; border-radius:var(--radius);
+      transition:background .2s;
+      flex-shrink:0;
+    }
+    .hamburger:hover{ background:rgba(122,155,181,.12); }
+    .hamburger span{
+      display:block; width:22px; height:1.5px;
+      background:var(--ink); border-radius:2px;
+      transition:transform .3s ease, opacity .3s ease;
+      transform-origin:center;
+    }
+    .hamburger.open span:nth-child(1){ transform:translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2){ opacity:0; transform:scaleX(0); }
+    .hamburger.open span:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
+
+    /* ===== MENÚ DESPLEGABLE ===== */
+    .nav-drawer{
+      position:fixed; top:58px; right:0; left:0;
+      background:rgba(247,243,238,.98); backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(122,155,181,.20);
+      z-index:999;
+      display:flex; flex-direction:column;
+      overflow:hidden;
+      max-height:0;
+      transition:max-height .35s ease, padding .35s ease;
+      padding:0 20px;
+    }
+    .nav-drawer.open{
+      max-height:300px;
+      padding:12px 20px 16px;
+    }
+    .nav-drawer a{
+      color:var(--ink); text-decoration:none; font-weight:400;
+      letter-spacing:.06em; font-size:13px; text-transform:uppercase;
+      padding:12px 0; border-bottom:1px solid rgba(122,155,181,.12);
+      transition:color .2s;
+    }
+    .nav-drawer a:last-child{ border-bottom:none; }
+    .nav-drawer a:hover{ color:var(--brand-dark); }
+
+    @media(min-width:768px){
+      .nav-drawer{ top:66px; padding-left:32px; padding-right:32px; }
+      .nav-drawer.open{ padding:14px 32px 18px; }
+    }
+
+    /* ===== HERO ===== */
     header.hero{
       min-height:92vh;
       display:flex; align-items:center; justify-content:center; text-align:center;
@@ -184,14 +222,11 @@
       width:40px; height:1px; background:var(--brand); margin:14px auto 0;
     }
 
-    /* ===== EVENT CARDS — dos tarjetas en fila, sin foto ===== */
+    /* ===== EVENT CARDS ===== */
     .event-cards{
-      display:grid; gap:var(--gap);
-      grid-template-columns:1fr;
+      display:grid; gap:var(--gap); grid-template-columns:1fr;
     }
-    @media(min-width:640px){
-      .event-cards{ grid-template-columns:1fr 1fr; }
-    }
+    @media(min-width:640px){ .event-cards{ grid-template-columns:1fr 1fr; } }
 
     /* ===== CARD ===== */
     .card{
@@ -303,9 +338,7 @@
     }
     @media(min-width:768px){ .final-photos{ padding:0 32px 96px; } }
     .final-photos-grid{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:12px;
+      display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;
     }
     @media(min-width:640px){
       .final-photos-grid{ grid-template-columns:repeat(4, 1fr); gap:16px; }
@@ -347,13 +380,20 @@
   <!-- NAV -->
   <nav aria-label="Navegación principal">
     <a href="#inicio" class="nav-logo">Elisa &amp; Javier</a>
-    <div class="nav-links">
-      <a href="#evento">Ceremonia &amp; Banquete</a>
-      <a href="#hoteles">Hoteles</a>
-      <a href="#asistencia">Quiero asistir</a>
-      <a href="#regalo">Regalo de boda</a>
-    </div>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+
+  <!-- MENÚ DESPLEGABLE -->
+  <div class="nav-drawer" id="navDrawer" aria-hidden="true">
+    <a href="#evento" class="drawer-link">Ceremonia &amp; Banquete</a>
+    <a href="#hoteles" class="drawer-link">Hoteles</a>
+    <a href="#asistencia" class="drawer-link">Quiero asistir</a>
+    <a href="#regalo" class="drawer-link">Regalo de boda</a>
+  </div>
 
   <!-- HERO -->
   <header id="inicio" class="hero">
@@ -467,7 +507,7 @@
   <!-- FOTO DE TRANSICIÓN -->
   <section class="section reveal" aria-hidden="true" style="padding-top:0; padding-bottom:80px;">
     <div class="divider-photo">
-      <img src="img_foto3.jpg" alt="" loading="lazy">
+      <img src="img_foto8.jpg" alt="" loading="lazy">
     </div>
   </section>
 
@@ -481,7 +521,7 @@
       <p>Vuestra presencia es, sin duda, nuestro mayor regalo.</p>
       <p>Si además deseáis ayudarnos en el comienzo de esta nueva aventura, os estaremos muy agradecidos.</p>
       <div class="iban-block">
-        <span class="iban-number" id="iban">ES36 0049 7405 0020 1004 7891</span>
+        <span class="iban-number" id="iban">ES64 1583 0001 1291 4130 1238</span>
         <button class="button" id="copyIbanBtn" onclick="copyIBAN()">Copiar IBAN</button>
       </div>
     </div>
@@ -497,10 +537,10 @@
         <img src="img_foto5.jpg" alt="Elisa y Javier" loading="lazy">
       </div>
       <div class="fp-item">
-        <img src="img_foto11.jpg" alt="Elisa y Javier" loading="lazy">
+        <img src="img_foto16.jpg" alt="Elisa y Javier" loading="lazy">
       </div>
       <div class="fp-item">
-        <img src="img_foto12.jpg" alt="Elisa y Javier" loading="lazy">
+        <img src="img_foto15.jpg" alt="Elisa y Javier" loading="lazy">
       </div>
     </div>
   </div>
@@ -510,6 +550,7 @@
   </footer>
 
   <script>
+    // CUENTA ATRÁS
     const target = new Date("Nov 14, 2026 12:00:00").getTime();
     const el = {
       dd: document.getElementById('dd'),
@@ -527,6 +568,7 @@
     }
     const t = setInterval(tick, 1000); tick();
 
+    // COPIAR IBAN
     function copyIBAN(){
       const iban = document.getElementById("iban").innerText.trim();
       navigator.clipboard.writeText(iban).then(()=>{
@@ -537,6 +579,38 @@
       }).catch(()=> alert("Copia manual: "+iban));
     }
 
+    // HAMBURGER
+    const hamburger = document.getElementById('hamburger');
+    const navDrawer = document.getElementById('navDrawer');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = navDrawer.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      navDrawer.setAttribute('aria-hidden', !isOpen);
+    });
+
+    // Cerrar al pulsar un enlace del menú
+    document.querySelectorAll('.drawer-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navDrawer.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+        navDrawer.setAttribute('aria-hidden', true);
+      });
+    });
+
+    // Cerrar al pulsar fuera
+    document.addEventListener('click', (e) => {
+      if(!navDrawer.contains(e.target) && !hamburger.contains(e.target)){
+        navDrawer.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+        navDrawer.setAttribute('aria-hidden', true);
+      }
+    });
+
+    // REVEAL
     const io = new IntersectionObserver((entries)=>{
       for(const e of entries){
         if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
