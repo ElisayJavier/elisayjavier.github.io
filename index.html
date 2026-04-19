@@ -20,7 +20,7 @@
       --muted:#8a7d74;
       --paper:#fffdf9;
       --bg:#f7f3ee;
-      --overlay:rgba(20,14,10,.42);
+      --overlay:rgba(10,18,26,.55);
       --shadow:0 8px 32px rgba(80,50,20,.10);
       --radius:4px;
       --gap:24px;
@@ -102,8 +102,7 @@
       gap:5px; width:36px; height:36px;
       background:none; border:none; cursor:pointer;
       padding:4px; border-radius:var(--radius);
-      transition:background .2s;
-      flex-shrink:0;
+      transition:background .2s; flex-shrink:0;
     }
     .hamburger:hover{ background:rgba(122,155,181,.12); }
     .hamburger span{
@@ -128,10 +127,7 @@
       transition:max-height .35s ease, padding .35s ease;
       padding:0 20px;
     }
-    .nav-drawer.open{
-      max-height:300px;
-      padding:12px 20px 16px;
-    }
+    .nav-drawer.open{ max-height:300px; padding:12px 20px 16px; }
     .nav-drawer a{
       color:var(--ink); text-decoration:none; font-weight:400;
       letter-spacing:.06em; font-size:13px; text-transform:uppercase;
@@ -140,9 +136,8 @@
     }
     .nav-drawer a:last-child{ border-bottom:none; }
     .nav-drawer a:hover{ color:var(--brand-dark); }
-
     @media(min-width:768px){
-      .nav-drawer{ top:66px; padding-left:32px; padding-right:32px; }
+      .nav-drawer{ top:66px; }
       .nav-drawer.open{ padding:14px 32px 18px; }
     }
 
@@ -152,58 +147,63 @@
       display:flex; align-items:center; justify-content:center; text-align:center;
       padding:calc(58px + 32px) 20px 48px;
       background-image:
-        linear-gradient(to bottom, var(--overlay), rgba(20,14,10,.22)),
+        linear-gradient(to bottom, var(--overlay), rgba(10,18,26,.35)),
         url("img_foto2.jpg");
-      background-size:cover;
-      background-position:center;
+      background-size:cover; background-position:center;
       color:#fff;
     }
     @media(min-width:768px){ header.hero{ padding:calc(66px + 32px) 32px 64px; } }
     .hero-inner{ width:min(900px, 94vw); }
 
+    /* Nombre */
     h1{
       font-family:'Cormorant Garamond', serif;
-      font-size:clamp(52px, 10vw, 96px); font-weight:300;
-      line-height:1.04; letter-spacing:.01em;
-      text-shadow:0 2px 20px rgba(0,0,0,.3);
+      font-size:clamp(58px, 11vw, 108px); font-weight:600;
+      line-height:1.04; letter-spacing:.02em;
+      text-shadow:0 2px 24px rgba(0,0,0,.55), 0 0 60px rgba(0,0,0,.30);
     }
     h1 em{ font-style:italic; }
 
     .hero-divider{
-      width:48px; height:1px;
-      background:rgba(255,255,255,.5); margin:22px auto;
+      width:56px; height:1.5px;
+      background:rgba(255,255,255,.6); margin:24px auto;
     }
 
+    /* Fecha */
     .hero-date{
-      font-size:clamp(14px, 2.4vw, 18px);
-      letter-spacing:.14em; text-transform:uppercase;
-      color:#fff; opacity:.88; font-weight:300; margin-top:4px;
+      font-size:clamp(15px, 2.6vw, 21px);
+      letter-spacing:.18em; text-transform:uppercase;
+      color:#fff; font-weight:500; margin-top:4px;
+      text-shadow:0 1px 10px rgba(0,0,0,.6);
     }
     .hero-date .sep{
-      display:inline-block; width:4px; height:4px;
-      background:rgba(255,255,255,.50); border-radius:50%;
-      vertical-align:middle; margin:0 12px; position:relative; top:-1px;
+      display:inline-block; width:5px; height:5px;
+      background:rgba(255,255,255,.65); border-radius:50%;
+      vertical-align:middle; margin:0 14px; position:relative; top:-1px;
     }
 
+    /* Cuenta atrás */
     .countdown{
-      margin:28px auto 0;
+      margin:32px auto 0;
       display:flex; align-items:center; justify-content:center;
-      gap:32px; width:min(480px, 92vw);
+      gap:28px; width:min(520px, 92vw);
     }
     .cd-item{ text-align:center; }
     .cd-num{
-      font-family:'Cormorant Garamond', serif; font-weight:300;
-      font-size:clamp(32px, 6vw, 48px); line-height:1;
+      font-family:'Cormorant Garamond', serif; font-weight:600;
+      font-size:clamp(38px, 7vw, 58px); line-height:1;
       color:#fff; display:block;
+      text-shadow:0 2px 16px rgba(0,0,0,.55);
     }
     .cd-lbl{
-      margin-top:4px; font-size:9px; letter-spacing:.18em;
-      text-transform:uppercase; color:rgba(255,255,255,.60); display:block;
+      margin-top:5px; font-size:10px; letter-spacing:.20em;
+      text-transform:uppercase; color:rgba(255,255,255,.80); display:block;
+      font-weight:500; text-shadow:0 1px 8px rgba(0,0,0,.5);
     }
     .cd-sep{
-      font-family:'Cormorant Garamond', serif;
-      font-size:28px; color:rgba(255,255,255,.28);
-      line-height:1; padding-bottom:14px;
+      font-family:'Cormorant Garamond', serif; font-weight:300;
+      font-size:32px; color:rgba(255,255,255,.45);
+      line-height:1; padding-bottom:18px;
     }
 
     /* ===== SECTIONS ===== */
@@ -223,9 +223,7 @@
     }
 
     /* ===== EVENT CARDS ===== */
-    .event-cards{
-      display:grid; gap:var(--gap); grid-template-columns:1fr;
-    }
+    .event-cards{ display:grid; gap:var(--gap); grid-template-columns:1fr; }
     @media(min-width:640px){ .event-cards{ grid-template-columns:1fr 1fr; } }
 
     /* ===== CARD ===== */
@@ -302,6 +300,37 @@
       padding:4px 10px; border-radius:3px; letter-spacing:.06em;
     }
 
+    /* ===== INFORMACIÓN DE INTERÉS ===== */
+    .info-card{
+      background:var(--paper); border-radius:var(--radius);
+      box-shadow:var(--shadow); border:1px solid rgba(122,155,181,.15);
+      overflow:hidden;
+    }
+    .info-item{
+      display:flex; gap:20px; align-items:flex-start;
+      padding:28px 28px;
+      border-bottom:1px solid rgba(122,155,181,.10);
+    }
+    .info-item:last-child{ border-bottom:none; }
+    @media(min-width:768px){ .info-item{ padding:32px; gap:28px; } }
+
+    .info-icon{
+      flex-shrink:0; width:40px; height:40px;
+      background:var(--brand-light); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      margin-top:2px;
+    }
+    .info-icon svg{ width:18px; height:18px; stroke:var(--brand-dark); }
+
+    .info-body{}
+    .info-title{
+      font-size:10.5px; letter-spacing:.22em; text-transform:uppercase;
+      color:var(--brand-dark); font-weight:500; margin-bottom:8px;
+    }
+    .info-text{
+      font-size:14.5px; color:var(--ink); line-height:1.75;
+    }
+
     /* ===== DIVIDER PHOTO ===== */
     .divider-photo{
       width:100%; height:clamp(200px, 30vw, 340px);
@@ -333,23 +362,15 @@
 
     /* ===== FOTOS FINALES ===== */
     .final-photos{
-      width:100%; max-width:1060px; margin:0 auto;
-      padding:0 20px 80px;
+      width:100%; max-width:1060px; margin:0 auto; padding:0 20px 80px;
     }
     @media(min-width:768px){ .final-photos{ padding:0 32px 96px; } }
-    .final-photos-grid{
-      display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;
-    }
-    @media(min-width:640px){
-      .final-photos-grid{ grid-template-columns:repeat(4, 1fr); gap:16px; }
-    }
+    .final-photos-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+    @media(min-width:640px){ .final-photos-grid{ grid-template-columns:repeat(4,1fr); gap:16px; } }
     .final-photos-grid .fp-item{
-      border-radius:var(--radius); overflow:hidden;
-      box-shadow:var(--shadow); aspect-ratio:3/4;
+      border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); aspect-ratio:3/4;
     }
-    .final-photos-grid .fp-item img{
-      width:100%; height:100%; object-fit:cover; display:block;
-    }
+    .final-photos-grid .fp-item img{ width:100%; height:100%; object-fit:cover; display:block; }
 
     /* ===== FOOTER ===== */
     footer{
@@ -381,9 +402,7 @@
   <nav aria-label="Navegación principal">
     <a href="#inicio" class="nav-logo">Elisa &amp; Javier</a>
     <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </nav>
 
@@ -391,6 +410,7 @@
   <div class="nav-drawer" id="navDrawer" aria-hidden="true">
     <a href="#evento" class="drawer-link">Ceremonia &amp; Banquete</a>
     <a href="#hoteles" class="drawer-link">Hoteles</a>
+    <a href="#info" class="drawer-link">Información de interés</a>
     <a href="#asistencia" class="drawer-link">Quiero asistir</a>
     <a href="#regalo" class="drawer-link">Regalo de boda</a>
   </div>
@@ -492,6 +512,27 @@
     </div>
   </section>
 
+  <!-- INFORMACIÓN DE INTERÉS -->
+  <section class="section reveal" id="info">
+    <div class="section-heading">
+      <h3>Información de interés</h3>
+      <div class="rule"></div>
+    </div>
+    <div class="info-card">
+      <div class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <div class="info-body">
+          <p class="info-title">Servicio de autobús</p>
+          <p class="info-text">Los autobuses estarán esperando frente al Hotel Alfonso para el traslado de la ceremonia al banquete. Al acabar el banquete habrá servicio de autobús con destino Hotel Alfonso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ASISTENCIA -->
   <section class="section reveal" id="asistencia">
     <div class="asistencia-inner">
@@ -530,18 +571,10 @@
   <!-- FOTOS FINALES -->
   <div class="final-photos reveal">
     <div class="final-photos-grid">
-      <div class="fp-item">
-        <img src="img_foto4.jpg" alt="Elisa y Javier" loading="lazy">
-      </div>
-      <div class="fp-item">
-        <img src="img_foto5.jpg" alt="Elisa y Javier" loading="lazy">
-      </div>
-      <div class="fp-item">
-        <img src="img_foto16.jpg" alt="Elisa y Javier" loading="lazy">
-      </div>
-      <div class="fp-item">
-        <img src="img_foto15.jpg" alt="Elisa y Javier" loading="lazy">
-      </div>
+      <div class="fp-item"><img src="img_foto4.jpg" alt="Elisa y Javier" loading="lazy"></div>
+      <div class="fp-item"><img src="img_foto5.jpg" alt="Elisa y Javier" loading="lazy"></div>
+      <div class="fp-item"><img src="img_foto16.jpg" alt="Elisa y Javier" loading="lazy"></div>
+      <div class="fp-item"><img src="img_foto15.jpg" alt="Elisa y Javier" loading="lazy"></div>
     </div>
   </div>
 
@@ -550,7 +583,6 @@
   </footer>
 
   <script>
-    // CUENTA ATRÁS
     const target = new Date("Nov 14, 2026 12:00:00").getTime();
     const el = {
       dd: document.getElementById('dd'),
@@ -568,7 +600,6 @@
     }
     const t = setInterval(tick, 1000); tick();
 
-    // COPIAR IBAN
     function copyIBAN(){
       const iban = document.getElementById("iban").innerText.trim();
       navigator.clipboard.writeText(iban).then(()=>{
@@ -579,18 +610,14 @@
       }).catch(()=> alert("Copia manual: "+iban));
     }
 
-    // HAMBURGER
     const hamburger = document.getElementById('hamburger');
     const navDrawer = document.getElementById('navDrawer');
-
     hamburger.addEventListener('click', () => {
       const isOpen = navDrawer.classList.toggle('open');
       hamburger.classList.toggle('open', isOpen);
       hamburger.setAttribute('aria-expanded', isOpen);
       navDrawer.setAttribute('aria-hidden', !isOpen);
     });
-
-    // Cerrar al pulsar un enlace del menú
     document.querySelectorAll('.drawer-link').forEach(link => {
       link.addEventListener('click', () => {
         navDrawer.classList.remove('open');
@@ -599,8 +626,6 @@
         navDrawer.setAttribute('aria-hidden', true);
       });
     });
-
-    // Cerrar al pulsar fuera
     document.addEventListener('click', (e) => {
       if(!navDrawer.contains(e.target) && !hamburger.contains(e.target)){
         navDrawer.classList.remove('open');
@@ -610,7 +635,6 @@
       }
     });
 
-    // REVEAL
     const io = new IntersectionObserver((entries)=>{
       for(const e of entries){
         if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
