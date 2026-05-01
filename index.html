@@ -20,7 +20,7 @@
       --muted:#8a7d74;
       --paper:#fffdf9;
       --bg:#f7f3ee;
-      --overlay:rgba(10,18,26,.55);
+      --overlay:rgba(10,18,26,.60);
       --shadow:0 8px 32px rgba(80,50,20,.10);
       --radius:4px;
       --gap:24px;
@@ -122,12 +122,11 @@
       border-bottom:1px solid rgba(122,155,181,.20);
       z-index:999;
       display:flex; flex-direction:column;
-      overflow:hidden;
-      max-height:0;
+      overflow:hidden; max-height:0;
       transition:max-height .35s ease, padding .35s ease;
       padding:0 20px;
     }
-    .nav-drawer.open{ max-height:300px; padding:12px 20px 16px; }
+    .nav-drawer.open{ max-height:320px; padding:12px 20px 16px; }
     .nav-drawer a{
       color:var(--ink); text-decoration:none; font-weight:400;
       letter-spacing:.06em; font-size:13px; text-transform:uppercase;
@@ -147,7 +146,7 @@
       display:flex; align-items:center; justify-content:center; text-align:center;
       padding:calc(58px + 32px) 20px 48px;
       background-image:
-        linear-gradient(to bottom, var(--overlay), rgba(10,18,26,.35)),
+        linear-gradient(to bottom, var(--overlay), rgba(10,18,26,.40)),
         url("img_foto2.jpg");
       background-size:cover; background-position:center;
       color:#fff;
@@ -158,52 +157,52 @@
     /* Nombre */
     h1{
       font-family:'Cormorant Garamond', serif;
-      font-size:clamp(58px, 11vw, 108px); font-weight:600;
-      line-height:1.04; letter-spacing:.02em;
-      text-shadow:0 2px 24px rgba(0,0,0,.55), 0 0 60px rgba(0,0,0,.30);
+      font-size:clamp(64px, 13vw, 120px); font-weight:600;
+      line-height:1.02; letter-spacing:.02em;
+      text-shadow:0 3px 30px rgba(0,0,0,.70), 0 0 80px rgba(0,0,0,.40);
     }
     h1 em{ font-style:italic; }
 
     .hero-divider{
-      width:56px; height:1.5px;
-      background:rgba(255,255,255,.6); margin:24px auto;
+      width:60px; height:2px;
+      background:rgba(255,255,255,.65); margin:26px auto;
     }
 
     /* Fecha */
     .hero-date{
-      font-size:clamp(15px, 2.6vw, 21px);
-      letter-spacing:.18em; text-transform:uppercase;
-      color:#fff; font-weight:500; margin-top:4px;
-      text-shadow:0 1px 10px rgba(0,0,0,.6);
+      font-size:clamp(17px, 3vw, 26px);
+      letter-spacing:.16em; text-transform:uppercase;
+      color:#fff; font-weight:600; margin-top:4px;
+      text-shadow:0 2px 16px rgba(0,0,0,.70), 0 0 40px rgba(0,0,0,.40);
     }
     .hero-date .sep{
-      display:inline-block; width:5px; height:5px;
-      background:rgba(255,255,255,.65); border-radius:50%;
+      display:inline-block; width:6px; height:6px;
+      background:rgba(255,255,255,.70); border-radius:50%;
       vertical-align:middle; margin:0 14px; position:relative; top:-1px;
     }
 
     /* Cuenta atrás */
     .countdown{
-      margin:32px auto 0;
+      margin:36px auto 0;
       display:flex; align-items:center; justify-content:center;
-      gap:28px; width:min(520px, 92vw);
+      gap:28px; width:min(560px, 92vw);
     }
     .cd-item{ text-align:center; }
     .cd-num{
       font-family:'Cormorant Garamond', serif; font-weight:600;
-      font-size:clamp(38px, 7vw, 58px); line-height:1;
+      font-size:clamp(44px, 8vw, 66px); line-height:1;
       color:#fff; display:block;
-      text-shadow:0 2px 16px rgba(0,0,0,.55);
+      text-shadow:0 3px 20px rgba(0,0,0,.65), 0 0 50px rgba(0,0,0,.35);
     }
     .cd-lbl{
-      margin-top:5px; font-size:10px; letter-spacing:.20em;
-      text-transform:uppercase; color:rgba(255,255,255,.80); display:block;
-      font-weight:500; text-shadow:0 1px 8px rgba(0,0,0,.5);
+      margin-top:6px; font-size:11px; letter-spacing:.22em;
+      text-transform:uppercase; color:rgba(255,255,255,.90); display:block;
+      font-weight:600; text-shadow:0 1px 10px rgba(0,0,0,.60);
     }
     .cd-sep{
       font-family:'Cormorant Garamond', serif; font-weight:300;
-      font-size:32px; color:rgba(255,255,255,.45);
-      line-height:1; padding-bottom:18px;
+      font-size:36px; color:rgba(255,255,255,.50);
+      line-height:1; padding-bottom:20px;
     }
 
     /* ===== SECTIONS ===== */
@@ -308,7 +307,7 @@
     }
     .info-item{
       display:flex; gap:20px; align-items:flex-start;
-      padding:28px 28px;
+      padding:28px;
       border-bottom:1px solid rgba(122,155,181,.10);
     }
     .info-item:last-child{ border-bottom:none; }
@@ -325,11 +324,13 @@
     .info-body{}
     .info-title{
       font-size:10.5px; letter-spacing:.22em; text-transform:uppercase;
-      color:var(--brand-dark); font-weight:500; margin-bottom:8px;
+      color:var(--brand-dark); font-weight:500; margin-bottom:10px;
     }
     .info-text{
-      font-size:14.5px; color:var(--ink); line-height:1.75;
+      font-size:14.5px; color:var(--ink); line-height:1.75; margin-bottom:10px;
     }
+    .info-text:last-child{ margin-bottom:0; }
+    .info-text strong{ font-weight:500; color:var(--ink); }
 
     /* ===== DIVIDER PHOTO ===== */
     .divider-photo{
@@ -337,6 +338,13 @@
       border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
     }
     .divider-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* ===== FOTO ENTERA (sin recorte) ===== */
+    .full-photo{
+      width:100%; border-radius:var(--radius);
+      overflow:hidden; box-shadow:var(--shadow);
+    }
+    .full-photo img{ width:100%; height:auto; display:block; }
 
     /* ===== ASISTENCIA ===== */
     .asistencia-inner{ text-align:center; max-width:480px; margin:auto; }
@@ -354,10 +362,21 @@
       background:var(--paper); border:1px solid rgba(122,155,181,.20);
       border-radius:var(--radius); box-shadow:var(--shadow);
     }
+    /* Evitar que el móvil detecte el IBAN como teléfono */
     .iban-number{
       font-family:'Cormorant Garamond', serif;
       font-size:clamp(18px,3.5vw,26px); letter-spacing:.05em;
-      color:var(--ink); display:block; margin-bottom:16px;
+      color:var(--ink) !important; display:block; margin-bottom:16px;
+      text-decoration:none !important;
+      -webkit-text-decoration:none !important;
+      pointer-events:none;
+    }
+    .iban-number a,
+    .iban-number a:link,
+    .iban-number a:visited{
+      color:var(--ink) !important;
+      text-decoration:none !important;
+      pointer-events:none;
     }
 
     /* ===== FOTOS FINALES ===== */
@@ -377,10 +396,23 @@
       padding:48px 20px 40px; text-align:center;
       border-top:1px solid rgba(122,155,181,.18);
     }
-    footer p{
+    .footer-thanks{
       font-family:'Cormorant Garamond', serif;
       font-size:clamp(16px,2.5vw,20px); font-weight:300;
       color:var(--muted); font-style:italic;
+      margin-bottom:24px;
+    }
+    .footer-contact{
+      font-size:14px; color:var(--muted); line-height:2;
+      font-weight:300;
+    }
+    .footer-contact strong{
+      font-weight:500; color:var(--ink);
+    }
+    .footer-contact-title{
+      font-size:11px; letter-spacing:.20em; text-transform:uppercase;
+      color:var(--brand-dark); font-weight:500;
+      margin-bottom:10px; display:block;
     }
 
     /* ===== REVEAL ===== */
@@ -527,7 +559,8 @@
         </div>
         <div class="info-body">
           <p class="info-title">Servicio de autobús</p>
-          <p class="info-text">Los autobuses estarán esperando frente al Hotel Alfonso para el traslado de la ceremonia al banquete. Al acabar el banquete habrá servicio de autobús con destino Hotel Alfonso.</p>
+          <p class="info-text"><strong>De la ceremonia al banquete:</strong> La recogida será frente al Hotel Alfonso.</p>
+          <p class="info-text"><strong>Vuelta a Zaragoza:</strong> destino el Hotel Alfonso.</p>
         </div>
       </div>
     </div>
@@ -545,10 +578,10 @@
     </div>
   </section>
 
-  <!-- FOTO DE TRANSICIÓN -->
+  <!-- FOTO DE TRANSICIÓN (img_foto8, recortada) -->
   <section class="section reveal" aria-hidden="true" style="padding-top:0; padding-bottom:80px;">
     <div class="divider-photo">
-      <img src="img_foto20.jpg" alt="" loading="lazy">
+      <img src="img_foto8.jpg" alt="" loading="lazy">
     </div>
   </section>
 
@@ -562,11 +595,24 @@
       <p>Vuestra presencia es, sin duda, nuestro mayor regalo.</p>
       <p>Si además deseáis ayudarnos en el comienzo de esta nueva aventura, os estaremos muy agradecidos.</p>
       <div class="iban-block">
-        <span class="iban-number" id="iban">ES64 1583 0001 1291 4130 1238</span>
+        <!-- data-format="false" y user-select evitan detección automática como teléfono en iOS/Android -->
+        <span
+          class="iban-number"
+          data-format="false"
+          translate="no"
+          style="-webkit-user-select:text; user-select:text;"
+        >ES64&nbsp;1583&nbsp;0001&nbsp;1291&nbsp;4130&nbsp;1238</span>
         <button class="button" id="copyIbanBtn" onclick="copyIBAN()">Copiar IBAN</button>
       </div>
     </div>
   </section>
+
+  <!-- FOTO ENTERA img_foto20 -->
+  <div class="final-photos reveal" style="padding-bottom:0;">
+    <div class="full-photo">
+      <img src="img_foto20.jpg" alt="Elisa y Javier" loading="lazy">
+    </div>
+  </div>
 
   <!-- FOTOS FINALES -->
   <div class="final-photos reveal">
@@ -579,7 +625,12 @@
   </div>
 
   <footer>
-    <p>Gracias por acompañarnos en este día tan especial.</p>
+    <p class="footer-thanks">Gracias por acompañarnos en este día tan especial.</p>
+    <div class="footer-contact">
+      <span class="footer-contact-title">Para cualquier cosa, llámanos</span>
+      <div><strong>Elisa:</strong> <a href="tel:+34616644075" style="color:var(--muted); text-decoration:none;">616 64 40 75</a></div>
+      <div><strong>Javier:</strong> <a href="tel:+34663438555" style="color:var(--muted); text-decoration:none;">663 43 85 55</a></div>
+    </div>
   </footer>
 
   <script>
@@ -601,13 +652,14 @@
     const t = setInterval(tick, 1000); tick();
 
     function copyIBAN(){
-      const iban = document.getElementById("iban").innerText.trim();
+      // Extraer texto limpio sin los &nbsp;
+      const iban = document.getElementById("iban").innerText.replace(/\s+/g,' ').trim();
       navigator.clipboard.writeText(iban).then(()=>{
         const btn = document.getElementById("copyIbanBtn");
         const prev = btn.textContent;
         btn.textContent = "¡Copiado!";
         setTimeout(()=> btn.textContent = prev, 1500);
-      }).catch(()=> alert("Copia manual: "+iban));
+      }).catch(()=> alert("Copia manual: ES64 1583 0001 1291 4130 1238"));
     }
 
     const hamburger = document.getElementById('hamburger');
