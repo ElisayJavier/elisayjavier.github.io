@@ -7,15 +7,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Pinyon+Script&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --brand:#7a9bb5;
       --brand-dark:#4e7a96;
       --brand-light:#c8dce8;
-      --accent:#b8916a;
-      --accent-light:#e8d5c0;
       --ink:#2a2420;
       --muted:#8a7d74;
       --paper:#fffdf9;
@@ -39,6 +37,7 @@
       overflow-x:hidden;
     }
 
+    /* ===== FONDO BASE ===== */
     body::before{
       content:'';
       position:fixed; inset:0;
@@ -48,21 +47,43 @@
         radial-gradient(ellipse 700px 500px at 90% 70%, rgba(184,145,106,.05) 0%, transparent 70%);
     }
 
-    body::after{
-      content:'';
+    /* ===== GUIRNALDAS SVG FIJAS ===== */
+    /* Esquina superior derecha */
+    .garland-tr{
       position:fixed; top:0; right:0;
-      width:340px; height:340px;
-      pointer-events:none; z-index:0; opacity:.35;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='340' viewBox='0 0 340 340'%3E%3Cg fill='none' stroke='%237a9bb5' stroke-width='0.7' opacity='0.5'%3E%3Cellipse cx='310' cy='30' rx='60' ry='18' transform='rotate(-30 310 30)'/%3E%3Cellipse cx='300' cy='60' rx='45' ry='14' transform='rotate(-45 300 60)'/%3E%3Cellipse cx='270' cy='20' rx='50' ry='12' transform='rotate(-15 270 20)'/%3E%3Cellipse cx='320' cy='90' rx='38' ry='11' transform='rotate(-55 320 90)'/%3E%3Cellipse cx='250' cy='50' rx='42' ry='10' transform='rotate(-25 250 50)'/%3E%3Cellipse cx='290' cy='110' rx='35' ry='9' transform='rotate(-40 290 110)'/%3E%3C/g%3E%3Cg fill='%237a9bb5' opacity='0.25'%3E%3Ccircle cx='200' cy='15' r='2'/%3E%3Ccircle cx='220' cy='35' r='1.5'/%3E%3Ccircle cx='185' cy='45' r='1'/%3E%3Ccircle cx='240' cy='10' r='1.5'/%3E%3Ccircle cx='165' cy='28' r='1'/%3E%3Ccircle cx='210' cy='60' r='1'/%3E%3Ccircle cx='255' cy='80' r='1.5'/%3E%3Ccircle cx='175' cy='70' r='1'/%3E%3C/g%3E%3C/svg%3E");
+      width:380px; height:420px;
+      pointer-events:none; z-index:0; opacity:.55;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 380 420'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- Ramas principales --%3E%3Cpath d='M380 0 Q340 60 290 80 Q240 100 200 140 Q160 180 130 230' stroke='%23a8c5a0' stroke-width='1.8' fill='none'/%3E%3Cpath d='M380 20 Q350 70 310 90 Q270 110 240 150' stroke='%23b8d4a8' stroke-width='1.4' fill='none'/%3E%3Cpath d='M360 0 Q320 50 280 70 Q240 90 210 130 Q180 170 160 210' stroke='%2390b888' stroke-width='1.2' fill='none'/%3E%3C!-- Hojas eucalipto rama 1 --%3E%3Cellipse cx='310' cy='72' rx='14' ry='6' transform='rotate(-35 310 72)' fill='%23a8c5a0' opacity='.75'/%3E%3Cellipse cx='295' cy='82' rx='12' ry='5' transform='rotate(-50 295 82)' fill='%23b8d4b0' opacity='.70'/%3E%3Cellipse cx='278' cy='94' rx='13' ry='5' transform='rotate(-40 278 94)' fill='%2390b888' opacity='.72'/%3E%3Cellipse cx='260' cy='108' rx='14' ry='6' transform='rotate(-45 260 108)' fill='%23a8c5a0' opacity='.68'/%3E%3Cellipse cx='242' cy='124' rx='13' ry='5' transform='rotate(-38 242 124)' fill='%23b8d4b0' opacity='.70'/%3E%3Cellipse cx='226' cy='142' rx='15' ry='6' transform='rotate(-42 226 142)' fill='%2390b888' opacity='.65'/%3E%3Cellipse cx='208' cy='162' rx='13' ry='5' transform='rotate(-48 208 162)' fill='%23a8c5a0' opacity='.68'/%3E%3Cellipse cx='192' cy='182' rx='14' ry='6' transform='rotate(-35 192 182)' fill='%23b8d4b0' opacity='.65'/%3E%3Cellipse cx='176' cy='204' rx='13' ry='5' transform='rotate(-44 176 204)' fill='%2390b888' opacity='.60'/%3E%3Cellipse cx='160' cy='224' rx='14' ry='6' transform='rotate(-40 160 224)' fill='%23a8c5a0' opacity='.58'/%3E%3C!-- Hojas rama secundaria --%3E%3Cellipse cx='340' cy='60' rx='11' ry='4' transform='rotate(-28 340 60)' fill='%23c8dfc0' opacity='.60'/%3E%3Cellipse cx='322' cy='74' rx='12' ry='5' transform='rotate(-45 322 74)' fill='%23a8c5a0' opacity='.58'/%3E%3Cellipse cx='305' cy='88' rx='11' ry='4' transform='rotate(-38 305 88)' fill='%23b8d4b0' opacity='.55'/%3E%3Cellipse cx='288' cy='104' rx='12' ry='5' transform='rotate(-50 288 104)' fill='%2390b888' opacity='.55'/%3E%3Cellipse cx='268' cy='122' rx='11' ry='4' transform='rotate(-42 268 122)' fill='%23c8dfc0' opacity='.52'/%3E%3C!-- Ramitas finas --%3E%3Cpath d='M295 82 Q280 70 268 62' stroke='%23a8c5a0' stroke-width='0.8' fill='none' opacity='.6'/%3E%3Cpath d='M260 108 Q248 96 238 88' stroke='%23b8d4b0' stroke-width='0.8' fill='none' opacity='.55'/%3E%3Cpath d='M226 142 Q214 130 202 122' stroke='%2390b888' stroke-width='0.8' fill='none' opacity='.55'/%3E%3Cpath d='M192 182 Q178 170 166 164' stroke='%23a8c5a0' stroke-width='0.8' fill='none' opacity='.50'/%3E%3C!-- Hojitas pequeñas dispersas --%3E%3Cellipse cx='272' cy='64' rx='8' ry='3' transform='rotate(-20 272 64)' fill='%23c8dfc0' opacity='.50'/%3E%3Cellipse cx='244' cy='90' rx='7' ry='3' transform='rotate(-55 244 90)' fill='%23a8c5a0' opacity='.48'/%3E%3Cellipse cx='208' cy='124' rx='8' ry='3' transform='rotate(-30 208 124)' fill='%23b8d4b0' opacity='.45'/%3E%3Cellipse cx='170' cy='166' rx='7' ry='3' transform='rotate(-48 170 166)' fill='%2390b888' opacity='.45'/%3E%3C!-- Puntos bayas --%3E%3Ccircle cx='300' cy='78' r='3' fill='%23c8a882' opacity='.45'/%3E%3Ccircle cx='265' cy='106' r='2.5' fill='%23d4b898' opacity='.40'/%3E%3Ccircle cx='230' cy='138' r='3' fill='%23c8a882' opacity='.38'/%3E%3Ccircle cx='195' cy='176' r='2.5' fill='%23d4b898' opacity='.35'/%3E%3C/g%3E%3C/svg%3E");
       background-repeat:no-repeat; background-position:top right;
+      background-size:contain;
     }
 
-    .deco-bottom-left{
+    /* Esquina inferior izquierda */
+    .garland-bl{
       position:fixed; bottom:0; left:0;
-      width:260px; height:260px;
-      pointer-events:none; z-index:0; opacity:.28;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill='none' stroke='%237a9bb5' stroke-width='0.7' opacity='0.5'%3E%3Cellipse cx='30' cy='230' rx='55' ry='16' transform='rotate(30 30 230)'/%3E%3Cellipse cx='55' cy='250' rx='40' ry='12' transform='rotate(45 55 250)'/%3E%3Cellipse cx='20' cy='200' rx='48' ry='11' transform='rotate(18 20 200)'/%3E%3Cellipse cx='80' cy='240' rx='36' ry='10' transform='rotate(55 80 240)'/%3E%3C/g%3E%3C/svg%3E");
+      width:340px; height:380px;
+      pointer-events:none; z-index:0; opacity:.50;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 380'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0 380 Q40 320 90 300 Q140 280 180 240 Q220 200 250 160' stroke='%23a8c5a0' stroke-width='1.8' fill='none'/%3E%3Cpath d='M0 360 Q30 310 70 290 Q110 270 140 235' stroke='%23b8d4a8' stroke-width='1.4' fill='none'/%3E%3Cellipse cx='68' cy='302' rx='14' ry='6' transform='rotate(35 68 302)' fill='%23a8c5a0' opacity='.72'/%3E%3Cellipse cx='88' cy='288' rx='12' ry='5' transform='rotate(48 88 288)' fill='%23b8d4b0' opacity='.68'/%3E%3Cellipse cx='110' cy='272' rx='13' ry='5' transform='rotate(40 110 272)' fill='%2390b888' opacity='.70'/%3E%3Cellipse cx='132' cy='256' rx='14' ry='6' transform='rotate(44 132 256)' fill='%23a8c5a0' opacity='.65'/%3E%3Cellipse cx='154' cy='238' rx='13' ry='5' transform='rotate(36 154 238)' fill='%23b8d4b0' opacity='.65'/%3E%3Cellipse cx='176' cy='218' rx='14' ry='6' transform='rotate(42 176 218)' fill='%2390b888' opacity='.62'/%3E%3Cellipse cx='198' cy='196' rx='13' ry='5' transform='rotate(46 198 196)' fill='%23a8c5a0' opacity='.60'/%3E%3Cellipse cx='220' cy='174' rx='14' ry='6' transform='rotate(38 220 174)' fill='%23b8d4b0' opacity='.58'/%3E%3Cpath d='M88 288 Q100 276 112 268' stroke='%23a8c5a0' stroke-width='0.8' fill='none' opacity='.55'/%3E%3Cpath d='M132 256 Q144 244 156 236' stroke='%23b8d4b0' stroke-width='0.8' fill='none' opacity='.50'/%3E%3Cpath d='M176 218 Q188 206 200 198' stroke='%2390b888' stroke-width='0.8' fill='none' opacity='.50'/%3E%3Ccircle cx='100' cy='280' r='3' fill='%23c8a882' opacity='.40'/%3E%3Ccircle cx='144' cy='248' r='2.5' fill='%23d4b898' opacity='.38'/%3E%3Ccircle cx='188' cy='210' r='3' fill='%23c8a882' opacity='.35'/%3E%3C/g%3E%3C/svg%3E");
       background-repeat:no-repeat; background-position:bottom left;
+      background-size:contain;
+    }
+
+    /* Rama central izquierda — a mitad de página */
+    .garland-ml{
+      position:absolute; top:38%; left:0;
+      width:180px; height:300px;
+      pointer-events:none; z-index:0; opacity:.38;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 300'%3E%3Cpath d='M0 0 Q30 60 20 120 Q10 180 40 250' stroke='%23a8c5a0' stroke-width='1.4' fill='none'/%3E%3Cellipse cx='18' cy='80' rx='12' ry='5' transform='rotate(20 18 80)' fill='%23b8d4b0' opacity='.65'/%3E%3Cellipse cx='22' cy='120' rx='13' ry='5' transform='rotate(15 22 120)' fill='%23a8c5a0' opacity='.60'/%3E%3Cellipse cx='28' cy='162' rx='12' ry='5' transform='rotate(25 28 162)' fill='%2390b888' opacity='.58'/%3E%3Cellipse cx='36' cy='204' rx='13' ry='5' transform='rotate(18 36 204)' fill='%23b8d4b0' opacity='.55'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;
+    }
+
+    /* Rama central derecha */
+    .garland-mr{
+      position:absolute; top:55%; right:0;
+      width:180px; height:280px;
+      pointer-events:none; z-index:0; opacity:.35;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 280'%3E%3Cpath d='M180 0 Q150 55 160 115 Q170 175 140 240' stroke='%23a8c5a0' stroke-width='1.4' fill='none'/%3E%3Cellipse cx='162' cy='75' rx='12' ry='5' transform='rotate(-20 162 75)' fill='%23b8d4b0' opacity='.62'/%3E%3Cellipse cx='158' cy='115' rx='13' ry='5' transform='rotate(-15 158 115)' fill='%23a8c5a0' opacity='.58'/%3E%3Cellipse cx='152' cy='158' rx='12' ry='5' transform='rotate(-22 152 158)' fill='%2390b888' opacity='.55'/%3E%3Cellipse cx='144' cy='200' rx='13' ry='5' transform='rotate(-18 144 200)' fill='%23b8d4b0' opacity='.52'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;
     }
 
     .deco-texture{
@@ -70,7 +91,7 @@
       pointer-events:none; z-index:0;
       background-image: repeating-linear-gradient(
         105deg, transparent, transparent 60px,
-        rgba(122,155,181,.012) 60px, rgba(122,155,181,.012) 61px
+        rgba(122,155,181,.010) 60px, rgba(122,155,181,.010) 61px
       );
     }
 
@@ -90,13 +111,11 @@
       color:var(--ink); text-decoration:none;
       letter-spacing:.03em; white-space:nowrap; flex-shrink:0;
     }
-    .nav-logo em{ font-style:italic; color:var(--ink); }
     @media(min-width:768px){
       nav{ height:66px; padding:0 32px; }
       .nav-logo{ font-size:19px; }
     }
 
-    /* ===== HAMBURGER ===== */
     .hamburger{
       display:flex; flex-direction:column; justify-content:center;
       gap:5px; width:36px; height:36px;
@@ -115,7 +134,6 @@
     .hamburger.open span:nth-child(2){ opacity:0; transform:scaleX(0); }
     .hamburger.open span:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
 
-    /* ===== MENÚ DESPLEGABLE ===== */
     .nav-drawer{
       position:fixed; top:58px; right:0; left:0;
       background:rgba(247,243,238,.98); backdrop-filter:blur(10px);
@@ -154,13 +172,14 @@
     @media(min-width:768px){ header.hero{ padding:calc(66px + 32px) 32px 64px; } }
     .hero-inner{ width:min(900px, 94vw); }
 
+    /* Nombre — Pinyon Script */
     h1{
-      font-family:'Cormorant Garamond', serif;
-      font-size:clamp(64px, 13vw, 120px); font-weight:600;
-      line-height:1.02; letter-spacing:.02em;
+      font-family:'Pinyon Script', cursive;
+      font-size:clamp(72px, 14vw, 130px); font-weight:400;
+      line-height:1.05;
       text-shadow:0 3px 30px rgba(0,0,0,.70), 0 0 80px rgba(0,0,0,.40);
+      letter-spacing:.02em;
     }
-    h1 em{ font-style:italic; }
 
     .hero-divider{
       width:60px; height:2px;
@@ -189,7 +208,7 @@
       font-family:'Cormorant Garamond', serif; font-weight:600;
       font-size:clamp(44px, 8vw, 66px); line-height:1;
       color:#fff; display:block;
-      text-shadow:0 3px 20px rgba(0,0,0,.65), 0 0 50px rgba(0,0,0,.35);
+      text-shadow:0 3px 20px rgba(0,0,0,.65);
     }
     .cd-lbl{
       margin-top:6px; font-size:11px; letter-spacing:.22em;
@@ -223,7 +242,6 @@
     .event-cards{ display:grid; gap:var(--gap); grid-template-columns:1fr; }
     @media(min-width:640px){ .event-cards{ grid-template-columns:1fr 1fr; } }
 
-    /* ===== CARD ===== */
     .card{
       background:var(--paper); padding:28px 28px 24px;
       border-radius:var(--radius); box-shadow:var(--shadow);
@@ -304,47 +322,30 @@
       overflow:hidden;
     }
     .info-item{
-      display:flex; gap:20px; align-items:flex-start;
       padding:28px;
       border-bottom:1px solid rgba(122,155,181,.10);
     }
     .info-item:last-child{ border-bottom:none; }
-    @media(min-width:768px){ .info-item{ padding:32px; gap:28px; } }
+    @media(min-width:768px){ .info-item{ padding:32px; } }
 
-    .info-icon{
-      flex-shrink:0; width:40px; height:40px;
-      background:var(--brand-light); border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      margin-top:2px;
-    }
-    .info-icon svg{ width:18px; height:18px; stroke:var(--brand-dark); }
-
-    .info-body{ flex:1; }
     .info-title{
       font-size:10.5px; letter-spacing:.22em; text-transform:uppercase;
-      color:var(--brand-dark); font-weight:500; margin-bottom:10px;
+      color:var(--brand-dark); font-weight:500; margin-bottom:12px;
     }
     .info-text{
       font-size:14.5px; color:var(--ink); line-height:1.75; margin-bottom:10px;
     }
-    .info-text:last-child{ margin-bottom:0; }
-    .info-text strong{ font-weight:500; color:var(--ink); }
+    .info-text:last-of-type{ margin-bottom:0; }
 
-    /* Peluquerías: lista de salones */
-    .salon-list{ display:grid; gap:14px; margin-top:4px; }
-    @media(min-width:560px){ .salon-list{ grid-template-columns:1fr 1fr; } }
-
-    .salon-item{
-      background:var(--bg); border:1px solid rgba(122,155,181,.15);
-      border-radius:var(--radius); padding:14px 16px;
-    }
+    /* Peluquerías — sin cuadros */
+    .salon-list{ display:flex; flex-direction:column; gap:10px; margin-top:4px; }
+    .salon-item{ display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; }
     .salon-name{
       font-family:'Cormorant Garamond', serif;
-      font-size:16px; font-weight:400; color:var(--ink);
-      margin-bottom:6px; display:block;
+      font-size:17px; font-weight:400; color:var(--ink);
     }
     .salon-link{
-      display:inline-flex; align-items:center; gap:5px;
+      display:inline-flex; align-items:center; gap:4px;
       font-size:11.5px; letter-spacing:.10em; text-transform:uppercase;
       font-weight:500; color:var(--brand-dark); text-decoration:none;
       border-bottom:1px solid var(--brand-light); padding-bottom:1px;
@@ -385,13 +386,6 @@
       -webkit-text-decoration:none !important;
       pointer-events:none;
     }
-    .iban-number a,
-    .iban-number a:link,
-    .iban-number a:visited{
-      color:var(--ink) !important;
-      text-decoration:none !important;
-      pointer-events:none;
-    }
 
     /* ===== FOTOS FINALES ===== */
     .final-photos{
@@ -428,13 +422,17 @@
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
       .reveal{opacity:1;transform:none;transition:none}
-      body::before,body::after,.deco-bottom-left,.deco-texture{display:none}
+      body::before,.garland-tr,.garland-bl,.garland-ml,.garland-mr,.deco-texture{display:none}
     }
   </style>
 </head>
 <body>
 
-  <div class="deco-bottom-left" aria-hidden="true"></div>
+  <!-- Guirnaldas fijas -->
+  <div class="garland-tr" aria-hidden="true"></div>
+  <div class="garland-bl" aria-hidden="true"></div>
+  <div class="garland-ml" aria-hidden="true"></div>
+  <div class="garland-mr" aria-hidden="true"></div>
   <div class="deco-texture" aria-hidden="true"></div>
 
   <!-- NAV -->
@@ -457,7 +455,7 @@
   <!-- HERO -->
   <header id="inicio" class="hero">
     <div class="hero-inner">
-      <h1><em>Elisa</em> &amp; Javier</h1>
+      <h1>Elisa &amp; Javier</h1>
       <div class="hero-divider"></div>
       <div class="hero-date" aria-label="14 de noviembre de 2026 en Zaragoza">
         14 de noviembre de 2026
@@ -561,42 +559,28 @@
 
       <!-- Autobús -->
       <div class="info-item">
-        <div class="info-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
-          </svg>
-        </div>
-        <div class="info-body">
-          <p class="info-title">Servicio de autobús</p>
-          <p class="info-text"><strong>De la ceremonia al banquete:</strong> La recogida será frente al Hotel Alfonso.</p>
-          <p class="info-text"><strong>Vuelta a Zaragoza:</strong> destino el Hotel Alfonso.</p>
-        </div>
+        <p class="info-title">Servicio de autobús</p>
+        <p class="info-text">Habrá servicio de autobús de la ceremonia al banquete. La recogida después de la ceremonia será frente al Hotel Alfonso (Calle del Coso, 15-17).</p>
+        <p class="info-text">Tras el banquete habrá servicio de autobús desde la Finca Sansui hasta el Hotel Alfonso.</p>
       </div>
 
       <!-- Peluquerías -->
       <div class="info-item">
-        <div class="info-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 2v4"/><path d="M18 2v4"/><path d="M6 12c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-6z"/><path d="M9 17v-5"/><path d="M15 17v-5"/><path d="M6 6h12"/>
-          </svg>
-        </div>
-        <div class="info-body">
-          <p class="info-title">Peluquerías cercanas</p>
-          <div class="salon-list">
-            <div class="salon-item">
-              <span class="salon-name">Oliver y Goretti</span>
-              <a class="salon-link" href="https://oliverygoretti.com/" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Página web
-              </a>
-            </div>
-            <div class="salon-item">
-              <span class="salon-name">Eva Pellejero</span>
-              <a class="salon-link" href="https://evapellejero.com/" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Página web
-              </a>
-            </div>
+        <p class="info-title">Peluquerías céntricas en Zaragoza</p>
+        <div class="salon-list">
+          <div class="salon-item">
+            <span class="salon-name">Oliver y Goretti</span>
+            <a class="salon-link" href="https://oliverygoretti.com/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Página web
+            </a>
+          </div>
+          <div class="salon-item">
+            <span class="salon-name">Eva Pellejero</span>
+            <a class="salon-link" href="https://evapellejero.com/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Página web
+            </a>
           </div>
         </div>
       </div>
@@ -617,7 +601,7 @@
     </div>
   </section>
 
-  <!-- FOTO DE TRANSICIÓN (img_foto20) -->
+  <!-- FOTO DE TRANSICIÓN -->
   <section class="section reveal" aria-hidden="true" style="padding-top:0; padding-bottom:80px;">
     <div class="divider-photo">
       <img src="img_foto20.jpg" alt="" loading="lazy">
